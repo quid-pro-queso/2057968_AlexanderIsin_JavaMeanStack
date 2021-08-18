@@ -1,0 +1,12 @@
+
+<div *ngIf = "showLogin">
+<h1>Login Form</h1>
+<label>Username </label>
+<input type="text" #usernameRef/><br>
+<label>Password </label>
+<input type="password" #passwordRef/><br>
+<button (click)="check(usernameRef, passwordRef)">Sign Up</button>
+{{msg}}
+
+
+</div>
