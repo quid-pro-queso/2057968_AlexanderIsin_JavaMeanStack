@@ -1,0 +1,38 @@
+<h1>Data Tracker</h1>
+<mat-form-field appearance="fill">
+  <mat-label>ID</mat-label>
+  <input matInput placeholder="ID" #id>
+</mat-form-field>
+<mat-form-field appearance="fill">
+  <mat-label>Name</mat-label>
+  <input matInput placeholder="Name" #name>
+</mat-form-field>
+<mat-form-field appearance="fill">
+  <mat-label>Task</mat-label>
+  <input matInput placeholder="Task" #task>
+</mat-form-field>
+<mat-form-field appearance="fill">
+  <mat-label>Deadline</mat-label>
+  <input matInout placeholder="Deadline" #deadline>
+</mat-form-field>
+<button mat-button color="primary" (click)="addTask(id, name, task, deadline)">Add</button>
+<button mat-button color="warn">Reset</button>
+<hr>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Task</th>
+            <th>Deadline</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let Task in test">
+          <td>{{Task.empID}}</td>
+          <td>{{Task.name}}</td>
+          <td>{{Task.task}}</td>
+          <td>{{task.deadline}}</td>
+        </tr>
+    </tbody>
+</table>
