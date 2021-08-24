@@ -6,7 +6,43 @@
 <label>Password </label>
 <input type="password" #passwordRef/><br>
 <button (click)="check(usernameRef, passwordRef)">Login</button>
+<button (click)="showSignup()">Sign Up</button>
 {{msg}}
 
+
+</div>
+
+<div *ngIf = "showSign">
+    <h1>Registration Form</h1>
+    
+        <label>First Name</label>
+        <input type="text" #fNameRef/><br>
+        <label>Last Name</label>
+        <input type="text" #lNameRef/><br>
+        <label>Username </label>
+        <input type="text" #usernameRef/><br>
+        <label>Password </label>
+        <input type="password" #passwordRef/><br>
+        <input type="button" value="submit" (click)="signUp(fNameRef, lNameRef, usernameRef, passwordRef)" />
+        
+    
+    <br>
+
+</div>
+<div *ngIf = "showDisplay">
+    <h1>My Portfolio</h1>
+    <h3>Welcome {{displayName}}!</h3>
+    Contact Name<input type="text" #cName><br>
+    Phone Number<input type="text" #pNum><br>
+    <button (click)="createTable(cName, pNum)">Save</button>
+    <br>
+    <br>
+    <h3>Contact:</h3>
+    <table id="myTable">
+        <tr>
+            <th>Name</th>
+            <th>Phone Number</th>
+        </tr>
+    </table>
 
 </div>

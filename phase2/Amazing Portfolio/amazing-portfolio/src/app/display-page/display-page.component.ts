@@ -1,6 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { SharedService } from '../shared.services';
-import { User } from '../user.model';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-display-page',
@@ -8,15 +6,10 @@ import { User } from '../user.model';
   styleUrls: ['./display-page.component.css']
 })
 export class DisplayPageComponent implements OnInit {
-  users?:Array<User>;
-  username:string="";
-  @Input()
-  showDisplay:boolean = false;
-  constructor(public ser:SharedService) { }
+
+  constructor() { }
 
   ngOnInit(): void {
-    this.users = this.ser.getUserArray();
-    this.username=this.users[0].userName;
   }
 
 }
