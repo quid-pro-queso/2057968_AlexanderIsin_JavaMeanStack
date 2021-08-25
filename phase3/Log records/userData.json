@@ -1,0 +1,18 @@
+[
+{
+  "firstName": "akash",
+  "lastName": "professor",
+  "gender": "smart",
+  "emailAddress": "bestprof@simplilearn.com"
+},{
+  "firstName": "Alex",
+  "lastName": "Isin",
+  "gender": "Male",
+  "emailAddress": "example@email.com"
+},{
+  "firstName": "Mr",
+  "lastName": "President",
+  "gender": "America",
+  "emailAddress": "prez4real@usa.com"
+}
+]
