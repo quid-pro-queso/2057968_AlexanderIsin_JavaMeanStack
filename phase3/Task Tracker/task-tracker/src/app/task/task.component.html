@@ -1,0 +1,46 @@
+<div>
+    <h1>Task Planner</h1><br><br>
+    <h2>Add Task</h2>
+    <form [formGroup]="taskRef" (ngSubmit)="storeInfo()">
+        <label>Employee ID</label>
+        <input type="text" formControlName="empId"><br>
+        <label>Task ID</label>
+        <input type="text" formControlName="taskId"><br>
+        <label>Task Name</label>
+        <input type="text" formControlName="task"><br>
+        <label>Deadline</label>
+        <input type="text" formControlName="deadline"><br>
+        <input type = "submit" value="Add Task"/>
+        <input type="reset" value="Reset">
+    </form><br>
+    <span style="color:red">{{storeMsg}}</span>
+</div>
+<div>
+    <h2>Delete Task</h2>
+    <form>
+        <label>Task ID</label>
+        <input type="text" [(ngModel)]="taskId" name="taskId">
+        <input type="submit" value="Delete" (click)="deleteTask(taskId)">
+
+    </form>
+    <span style="color:red">{{deleteMsg}}</span>
+</div>
+<div>
+    <h2>List Task</h2>
+    <table border="1">
+        <tr>
+            <th>Employee ID</th>
+            <th>Task ID</th>
+            <th>Task Name</th>
+            <th>Deadline</th>
+            
+        </tr>
+        <tr *ngFor="let task of tasks">
+            <td>{{task.empId}}</td>
+            <td>{{task.taskId}}</td>
+            <td>{{task.task}}</td>
+            <td>{{task.deadline}}</td>
+            
+        </tr>
+    </table>
+</div>
