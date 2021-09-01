@@ -1,0 +1,42 @@
+  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/JavaScript">
+    let ws = new WebSocket("ws://localhost:9090");
+
+    //open the connecton 
+    ws.onopen= ()=> {
+        // send data to web socket server application
+        ws.send("Hello Server, I am Chat bot App!");
+        info = ()=> {
+            let msg = document.getElementById("dd").value;
+            ws.send(msg);
+            let node = document.createElement("p");
+            let textnode = document.createTextNode("- "+msg);
+            node.appendChild(textnode);
+            document.getElementById("chat").appendChild(node);
+            document.getElementById("dd").value="";
+        }
+    }
+    // receive the messag from server application 
+    ws.onmessage = (msg)=> {
+        console.log(msg.data);
+        let node = document.createElement("p");
+        let textnode = document.createTextNode("Chat Bot says: "+msg.data);
+        node.appendChild(textnode);
+        document.getElementById("chat").appendChild(node);
+    }
+    </script>
+</head>
+<body>
+    <h2>Web Socket Program</h2>
+    <div id="chat"></div><br><br>
+    <input type="text" id="dd"/>
+    <input type="button" value="Send" onclick="info()"/>
+</body>
+</html>
