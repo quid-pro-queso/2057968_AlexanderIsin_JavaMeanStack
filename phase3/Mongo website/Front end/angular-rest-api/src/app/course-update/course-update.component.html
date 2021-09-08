@@ -1,0 +1,10 @@
+<div>
+    <form [formGroup]="courseRef" (ngSubmit)="updateCourse()">
+        <label>Course Id:</label>
+        <input type="text" formControlName="_cid"/><br/>
+        <label>Amount</label>
+        <input type="text" formControlName="amt"/><br/>
+        <input type="submit" value="Update"/>
+        
+    </form>
+</div>

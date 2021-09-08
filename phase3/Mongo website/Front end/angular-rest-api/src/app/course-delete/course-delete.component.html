@@ -1,0 +1,10 @@
+<div>
+    <h1>Delete Course</h1>
+    <form [formGroup]="courseRef" (ngSubmit)="deleteCourse()">
+        <label>Course Id:</label>
+        <input type="text" formControlName="_cid"/><br/>
+        <input type="submit" value="Delete"/>
+        
+    </form>
+    
+</div>

@@ -1,0 +1,15 @@
+<div>
+    <h2>Create Account</h2>
+    <form [formGroup]="courseRef" (ngSubmit)="addCourse()">
+        <label>Course Id:</label>
+        <input type="text" formControlName="_cid"/><br/>
+        <label>Course Name</label>
+        <input type="text" formControlName="cname"/><br/>
+        <label>Description:</label>
+        <input type="text" formControlName="desc"/><br/>
+        <label>Amount</label>
+        <input type="text" formControlName="amt"/><br/>
+        <input type="submit" value="Add"/>
+        <input type="reset" value="reset"/>
+    </form>
+</div>
