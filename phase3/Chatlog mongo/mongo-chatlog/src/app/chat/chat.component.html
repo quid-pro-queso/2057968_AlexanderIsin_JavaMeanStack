@@ -1,0 +1,11 @@
+<div>
+    
+    <form [formGroup]="chatRef" (ngSubmit)="addChat()">
+        <label>Name:</label>
+        <input type="text" formControlName="cname"/><br/>
+        <label>Message:</label>
+        <input type="text" formControlName="chat"/><br/>
+        <input type="submit" value="Send"/>
+        
+    </form>
+</div>
